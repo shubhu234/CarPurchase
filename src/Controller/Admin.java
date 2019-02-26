@@ -1,21 +1,23 @@
-
-/* This is an Admin class
- * It will provide all the functionalties for car purchase system like
- * add new customer,add car to the customer, list the customer by name,
- * list the individual customer based on the id,generate the prize
+/*
+ * Admin class for controlling all the application   
  */
-package carpurchase;
+package Controller;
+
 import java.util.Scanner;
+
+import utility.CarUtility;
 public class Admin extends CarUtility {
 	public static void main(String args[]) {
 		
-		//scanner for taking the input from the user
+		//scanner object for taking the input from the user
 		Scanner scanner = new Scanner(System.in);
-		//utilty for accessing the CarUtility calss methods
+		
+		//utilty object for accessing the CarUtility class methods
 		CarUtility utility=new CarUtility();
-	//admin will enter the choice for the various types of operations	
-	int choice;
-	int value=0;
+	
+	 //admin will enter the choice for the various types of operations	
+    int choice;
+    int value=0;
 	do{
 		System.out.println("Welcome to the Car Purchase System\n"+""
 	                       +"1. Add new customer\n"+""
@@ -47,16 +49,14 @@ public class Admin extends CarUtility {
 			utility.listCustomersOnId();
 			break;
 			
-		 //Generating the prize
-		 case 5:
+		//Generating the prize
+		case 5:
 			utility.generatePrize();
 			break;
 		default:
-				System.out.print("Invalid choice");
+			    System.out.print("Invalid choice");
 				break;
 		}
-		
-		
 		System.out.print("\n Do you want to continue...\n Y for Yes \n E for Exit\n");
 		char value1=scanner.next().charAt(0);
 		if(value1 =='Y' || value1 == 'y')
